@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar</title>
+</head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    .progress-container {
+      text-align: center;
+      width: 80%;
+      max-width: 400px;
+    }
+
+    progress {
+      width: 100%;
+      height: 20px;
+      appearance: none;
+    }
+
+    progress::-webkit-progress-bar {
+      background-color: #e0e0e0;
+      border-radius: 10px;
+    }
+
+    progress::-webkit-progress-value {
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      border-radius: 10px;
+    }
+
+    progress::-moz-progress-bar {
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      border-radius: 10px;
+    }
+
+    .progress-label {
+      margin-top: 10px;
+      font-size: 1rem;
+    }
+</style>
+<body>
+    <div class="progress-container">
+        <h2>Task Progress</h2>
+        <progress id="progressBar" value="40" max="100"></progress>
+        <div class="progress-label">40% Complete</div>
+    </div>
+</body>
+<script>
+    const progressBar = document.getElementById('progressBar');
+    const progressLabel = document.querySelector('.progress-label');
+
+    let progress = 40;
+    setInterval(() => {
+        if (progress < 100) {
+            progress += 5;
+            progressBar.value = progress;
+            progressLabel.textContent = `${progress}% Complete`;
+        }
+    }, 1000);
+
+</script>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+</head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #f4f4f9;
+    }
+
+    .slider-container {
+      position: relative;
+      width: 80%;
+      max-width: 600px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 400%;
+    }
+
+    .slides img {
+      width: 100%;
+      display: block;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    .navigation-manual {
+      position: absolute;
+      width: 100%;
+      bottom: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .navigation-manual label {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .navigation-manual label:hover {
+      background: #666;
+    }
+
+    input#slide1:checked ~ .slides {
+      transform: translateX(0%);
+    }
+
+    input#slide2:checked ~ .slides {
+      transform: translateX(-100%);
+    }
+
+    input#slide3:checked ~ .slides {
+      transform: translateX(-200%);
+    }
+
+    input#slide4:checked ~ .slides {
+      transform: translateX(-300%);
+    }
+
+    input:checked + label {
+      background: #333;
+    }
+</style>
+<body>
+    <div class="slider-container">
+        <input type="radio" name="slide1" id="slide1">
+        <input type="radio" name="slide2" id="slide2">
+        <input type="radio" name="slide3" id="slide3">
+        <input type="radio" name="slide4" id="slide4">
+    </div>
+
+    <div class="slides">
+        <img src="https://wallpapers.com/images/featured/iron-man-pictures-k83lqhe6vnh95b1m.jpg" alt="Image 1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTkV5Q5gJPwjzTlROVHS8MXHZ79cWCl4FG7A&s" alt="Image 2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXWPbi5feCC75ye8ILn9hyetk4sv0m0JFF0g&s" alt="Image 3">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfNw_iSMpClEHq9M_VXCWW6yXiYqMohLEPwA&s" alt="Image 4">
+    </div>
+
+    <div class="navigation-manual">
+        <label for="slide1"></label>
+        <label for="slide2"></label>
+        <label for="slide3"></label>
+        <label for="slide4"></label>
+    </div>
+</body>
+</html>
