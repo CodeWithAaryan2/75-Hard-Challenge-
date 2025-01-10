@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickable Phone Number Link</title>
+</head>
+<style>
+      body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #83a4d4, #b6fbff);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .call-container {
+      text-align: center;
+    }
+
+    .phone-link {
+      display: inline-flex;
+      align-items: center;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 50px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s, background-color 0.3s;
+    }
+
+    .phone-link:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+
+    .phone-icon {
+      margin-right: 10px;
+      font-size: 1.5rem;
+    }
+
+    .phone-label {
+      font-size: 1rem;
+    }
+</style>
+<body>
+    <div class="call-container">
+        <a href="tel:+919152889767" class="phone-link">
+            <span class="phone-icon">📞</span>
+            <span class="phone-label">+91 9152889767</span>
+        </a>
+    </div>
+</body>
+</html>
