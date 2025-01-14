@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Glow Effect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    background-color: #000; 
+    color: #fff; 
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.neon-text {
+    font-size: 3rem; 
+    color: #fff;
+    text-shadow: 
+        0 0 5px #fff, 
+        0 0 10px #fff, 
+        0 0 20px #ff0080, 
+        0 0 30px #ff0080, 
+        0 0 40px #ff0080, 
+        0 0 50px #ff0080, 
+        0 0 75px #ff0080; 
+}
+
+.neon-button {
+    background-color: #ff0080;
+    color: #fff; 
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 
+        0 0 5px #ff0080, 
+        0 0 10px #ff0080, 
+        0 0 20px #ff0080, 
+        0 0 30px #ff0080, 
+        0 0 40px #ff0080;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.neon-button:hover {
+    transform: scale(1.1);
+    box-shadow: 
+        0 0 10px #ff0080, 
+        0 0 20px #ff0080, 
+        0 0 40px #ff0080, 
+        0 0 50px #ff0080, 
+        0 0 60px #ff0080; 
+}
+
+</style>
+<body>
+    <div class="container">
+        <h1 class="neon-text">Neon Glow Text</h1>
+        <button class="neon-button">Neon Glow Button</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Loading Spinner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1a1a1a; /* Dark background for contrast */
+    overflow: hidden;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid transparent; /* Transparent base */
+    border-top: 6px solid rgba(255, 0, 128, 0.9); /* Gradient-colored top */
+    border-right: 6px solid rgba(0, 128, 255, 0.9); /* Gradient-colored right */
+    border-radius: 50%; /* Circular shape */
+    animation: spin 1.2s linear infinite, pulse 1.2s ease-in-out infinite;
+    box-shadow: 0 0 15px rgba(255, 0, 128, 0.6), 0 0 20px rgba(0, 128, 255, 0.6); /* Glow effect */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(255, 0, 128, 0.6), 0 0 20px rgba(0, 128, 255, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(255, 0, 128, 0.8), 0 0 30px rgba(0, 128, 255, 0.8);
+    }
+}
+
+</style>
+<body>
+    <div class="spinner"></div>
+</body>
+</html>
