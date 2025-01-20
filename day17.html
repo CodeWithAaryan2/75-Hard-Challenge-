@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Effect</title>
+</head>
+<style>
+    body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #1d1d1d, #2a2a72);
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  overflow: hidden;
+}
+
+.typing-container {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.typing-text {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cursor {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffd700;
+  animation: blink 0.7s steps(2) infinite;
+}
+
+/* Cursor blinking effect */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+</style>
+<body>
+  <div class="typing-container">
+    <h1 class="typing-text"></h1>
+    <span class="cursor">|</span>
+  </div>
+</body>
+<script>
+    const typingText = document.querySelector('.typing-text');
+const cursor = document.querySelector('.cursor');
+
+// Array of texts to type
+const textArray = ["Code With Aaryan","Learn to Code", "Build Amazing Projects", "Join the Journey!"];
+const typingSpeed = 100; // Speed of typing
+const erasingSpeed = 70; // Speed of erasing
+const delayBetweenTexts = 2000; // Delay between each text
+
+let textIndex = 0;
+let charIndex = 0;
+
+function type() {
+  if (charIndex < textArray[textIndex].length) {
+    typingText.textContent += textArray[textIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, typingSpeed);
+  } else {
+    setTimeout(erase, delayBetweenTexts);
+  }
+}
+
+function erase() {
+  if (charIndex > 0) {
+    typingText.textContent = textArray[textIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(erase, erasingSpeed);
+  } else {
+    textIndex = (textIndex + 1) % textArray.length;
+    setTimeout(type, typingSpeed);
+  }
+}
+
+// Start the typing effect
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(type, delayBetweenTexts);
+});
+
+</script>
+</html>
