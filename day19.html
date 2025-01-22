@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Quote Generator</title>
+</head>
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+
+.quote-container {
+  text-align: center;
+}
+
+.quote-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  margin-bottom: 20px;
+}
+
+.quote-text {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.quote-author {
+  font-size: 1rem;
+  font-style: italic;
+  color: #f0f0f0;
+}
+
+.quote-button {
+  background: #2575fc;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.quote-button:hover {
+  background: #6a11cb;
+  transform: translateY(-3px);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+</style>
+<body>
+  <div class="quote-container">
+    <div class="quote-card">
+      <p id="quote" class="quote-text">Click the button to get a quote!</p>
+      <p id="author" class="quote-author">- Author</p>
+    </div>
+    <button class="quote-button" onclick="generateQuote()">Get a Quote</button>
+  </div>
+
+</body>
+<script>
+    const quotes = [
+  { text: "The best way to predict the future is to create it.", author: "Peter Drucker" },
+  { text: "Do what you can, with what you have, where you are.", author: "Theodore Roosevelt" },
+  { text: "Success is not the key to happiness. Happiness is the key to success.", author: "Albert Schweitzer" },
+  { text: "The only limit to our realization of tomorrow is our doubts of today.", author: "Franklin D. Roosevelt" },
+  { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+  { text: "You miss 100% of the shots you don't take.", author: "Wayne Gretzky" },
+  { text: "Act as if what you do makes a difference. It does.", author: "William James" },
+];
+
+function generateQuote() {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  const randomQuote = quotes[randomIndex];
+  document.getElementById("quote").innerText = randomQuote.text;
+  document.getElementById("author").innerText = `- ${randomQuote.author}`;
+}
+
+</script>
+</html>
